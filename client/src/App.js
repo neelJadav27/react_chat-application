@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
-import Chat from './Chat';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Chat from './components/Chat';
+import Login  from "./components/Login";
 
 function App() {
   return (
     <div className="App">
-      <Chat/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login/>}/>
+          <Route path="/chat" element={<Chat/>}/> 
+        </Routes>
+      </Router>
     </div>
   );
 }
